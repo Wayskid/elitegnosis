@@ -5,7 +5,7 @@ export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="fixed z-50 w-full bg-black">
+    <div className="fixed top-0 z-50 w-full bg-black">
       <div className="w-[min(90rem,100%)] flex justify-between p-8 items-center">
         <p className="text-xl text-white">EliteGnosis</p>
         <div
