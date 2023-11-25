@@ -20,7 +20,7 @@ export default function NavMenu({ showMenu, setShowMenu, french, setFrench }) {
     <motion.div
       variants={showMenuAnim}
       animate={showMenu ? "show" : "hide"}
-      className={`hidden fixed top-0 h-full w-full bg-black text-white text-[clamp(55px,15vw,90px)] p-8 font-bold showcaseHeader`}
+      className={`hidden fixed top-0 h-full w-full bg-white text-[clamp(55px,15vw,90px)] p-8 font-bold showcaseHeader`}
     >
       <HiMiniXMark
         className="ml-auto text-5xl cursor-pointer"
@@ -30,8 +30,11 @@ export default function NavMenu({ showMenu, setShowMenu, french, setFrench }) {
       <NavLink>ABOUT</NavLink>
       <NavLink>CONTACT US</NavLink>
       <NavLink>CALCULATOR</NavLink>
+      <div className="relative">
+        <input type="checkbox" name="themeToggle" id="themeToggle" className="absolute" />
+      </div>
       <NavLink
-        className="text-4xl border self-center p-4 flex justify-between items-center font-medium"
+        className="text-4xl border border-black self-center p-4 flex justify-between items-center font-medium"
         onClick={() => setFrench(!french)}
       >
         {french ? "English" : "Française"}
