@@ -7,22 +7,23 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Home() {
+  
   return (
     <div className="h-full">
-      <div className="h-screen w-full grid items-end ml-auto mt-[20%] md:mt-[10%] lg:mt-[4%]">
+      <div className="h-screen w-full grid items-end mt-[20%] md:mt-[10%] lg:mt-[4%]">
         <div className="absolute md:grid right-8 top-[40%] gap-8 text-xl justify-between hidden">
           <BsInstagram />
           <FaLinkedinIn />
           <BsTwitterX />
           <FaFacebookF />
         </div>
-        <div className="w-[min(80rem,80%)] justify-self-end h-[70%]  relative">
+        <div className="w-[min(80rem,80%)] justify-self-end [@media(min-width:1700px)]:justify-self-center h-[70%] relative">
           <div className="absolute self-center -top-[6%] -left-[15%]">
             <motion.p
               initial={{ opacity: 0, translateX: -90 }}
               animate={{ opacity: 1, translateX: 0 }}
               transition={{ type: "easeInOut", duration: 1 }}
-              className="text-[clamp(80px,13vw,250px)] font-bold tracking-tighter text-gray-700 showcaseHeader absolute self-center -top-[30%] left-[8%] grid z-[-1]"
+              className="text-[clamp(80px,13vw,250px)] font-bold tracking-tight showcaseHeader absolute self-center -top-[30%] left-[8%] grid z-[-1] textStroke"
             >
               ELITEGNOSIS
             </motion.p>
