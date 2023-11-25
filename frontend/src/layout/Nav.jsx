@@ -6,10 +6,18 @@ import { IoMoon, IoSunnySharp } from "react-icons/io5";
 export default function Nav({ french, setFrench, lightDark, setLightDark }) {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="fixed top-0 z-50 w-full bg-white">
+    <div
+      className={`fixed top-0 z-50 w-full bg-white transition-colors duration-200 ${
+        lightDark && "dark:bg-black text-white"
+      }`}
+    >
       <div className="flex p-6 items-center">
         <div className="flex">
-          <p className="text-2xl font-semibold md:border-r md:border-black pr-8 pb-1 leading-5">
+          <p
+            className={`text-2xl font-semibold md:border-r md:border-black pr-8 pb-1 leading-5 ${
+              lightDark && "md:border-white"
+            }`}
+          >
             EliteGnosis
           </p>
           <div className="hidden md:flex gap-8 pl-8 font-medium">
@@ -34,13 +42,17 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
           </div>
         </div>
         <NavLink
-          className="font-medium hidden md:flex py-3 px-5 border border-black text-sm hover:bg-black hover:text-white transition duration-200 ease-in "
+          className={`font-medium hidden md:flex py-3 px-5 border border-black text-sm hover:bg-black hover:text-white transition duration-200 ease-in ${
+            lightDark && "md:border-white"
+          }`}
           onClick={() => setFrench(!french)}
         >
           {french ? "English" : "Française"}
         </NavLink>
         <div
-          className="grid gap-[9px] cursor-pointer md:hidden ml-auto"
+          className={`grid gap-[9px] cursor-pointer md:hidden ml-auto ${
+            lightDark && "dark:[&>*]:bg-white"
+          }`}
           onClick={() => setShowMenu(!showMenu)}
         >
           <div className="w-4 h-[1.8px] justify-self-end bg-black"></div>
@@ -53,6 +65,8 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
         setShowMenu={setShowMenu}
         french={french}
         setFrench={setFrench}
+        lightDark={lightDark}
+        setLightDark={setLightDark}
       />
     </div>
   );

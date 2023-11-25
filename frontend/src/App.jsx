@@ -4,17 +4,26 @@ import Home from "./pages/Home";
 
 export default function App() {
   //Language selection
-  const [french, setFrench] = useState(localStorage.getItem("French") || false);
+  const [french, setFrench] = useState(
+    JSON.parse(localStorage.getItem("French")) || false
+  );
 
   //Theme selection
-  const [lightDark, setLightDark] = useState(false);
+  const [lightDark, setLightDark] = useState(
+    JSON.parse(localStorage.getItem("Theme")) || false
+  );
 
   useEffect(() => {
-    localStorage.setItem("French", french);
-    localStorage.setItem("Theme", lightDark);
-  }, [french]);
+    localStorage.setItem("French", JSON.stringify(french));
+    localStorage.setItem("Theme", JSON.stringify(lightDark));
 
-  console.log(lightDark);
+    if (lightDark) {
+      document.body.style.backgroundColor = "black";
+    } else {
+      document.body.style.backgroundColor = "white";
+    }
+  }, [french, lightDark]);
+
   return (
     <div className="h-full">
       <Nav

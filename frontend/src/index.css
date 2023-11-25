@@ -16,8 +16,10 @@ html{
 
 body{
     height: 100%;
-    background-color: white;
     font-family: 'Montserrat', sans-serif;
+    transition-property: background-color;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
 }
 
 .showcaseHeader{
@@ -25,8 +27,7 @@ body{
 }
 
 .textStroke{
-    color: black;
+        color:black;
         -webkit-text-fill-color: white;
-        /* Will override color (regardless of order) */
         -webkit-text-stroke: 3px black;
 }
