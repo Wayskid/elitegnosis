@@ -19,7 +19,7 @@ export default function Nav({ french, setFrench }) {
             <NavLink className="">ABOUT</NavLink>
           </div>
         </div>
-        <div className="relative ml-auto grid items-center">
+        <div className="relative ml-auto items-center hidden md:grid">
           <input
             type="checkbox"
             name="themeToggle"
