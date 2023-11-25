@@ -8,7 +8,7 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
   return (
     <div
       className={`fixed top-0 z-50 w-full bg-white transition-colors duration-200 ${
-        lightDark && "dark:bg-black text-white"
+        lightDark ? "dark:bg-black text-white": "text-black"
       }`}
     >
       <div className="flex p-6 items-center">
@@ -35,7 +35,7 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
             onChange={() => setLightDark(!lightDark)}
             className="absolute w-full left-0 peer/theme z-10 opacity-0 cursor-pointer"
           />
-          <div className="w-11 h-[1.5rem] rounded-full bg-white border border-black relative mr-5 peer-checked/theme:[&>*:last-child]:right-[0.21rem] peer-checked/theme:[&>*:last-child]:bg-white peer-checked/theme:[&>*:first-child]:text-white peer-checked/theme:bg-black peer-checked/theme:border-white flex text-sm justify-between items-center py-[0.25rem] px-[0.21rem] transition-colors ease-in">
+          <div className="w-11 h-[1.5rem] rounded-full bg-white border border-black text-black relative mr-5 peer-checked/theme:[&>*:last-child]:right-[0.21rem] peer-checked/theme:[&>*:last-child]:bg-white peer-checked/theme:[&>*:first-child]:text-white peer-checked/theme:bg-black peer-checked/theme:border-white flex text-sm justify-between items-center py-[0.25rem] px-[0.21rem] transition-colors ease-in">
             <IoSunnySharp className="self-center text-white" />
             <IoMoon className="rounded bottom-[0.2rem] top-[0.2rem] text-black" />
             <div className="absolute rounded-full bg-black w-[1rem] h-[1rem] right-[calc(1.65rem-0.21rem)] transition-[right] ease-in duration-150"></div>

@@ -8,11 +8,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Home({ lightDark }) {
   return (
-    <div className="h-full">
-      <div className="h-screen w-full grid items-end mt-[20%] md:mt-[10%] lg:mt-[4%]">
+    <div className="h-screen overflow-y-hidden">
+      <div className="h-full w-full grid items-end mt-[20%] md:mt-[10%] lg:mt-[4%]">
         <div
           className={`absolute md:grid right-8 top-[40%] gap-8 text-xl justify-between hidden transition-colors duration-200 ${
-            lightDark && "dark:text-white"
+            lightDark ? "dark:text-white" : "text-black"
           }`}
         >
           <BsInstagram />
@@ -27,8 +27,9 @@ export default function Home({ lightDark }) {
               animate={{ opacity: 1, translateX: 0 }}
               transition={{ type: "easeInOut", duration: 1 }}
               className={`text-[clamp(80px,13vw,250px)] font-bold tracking-tight showcaseHeader absolute self-center -top-[31%] md:left-[8%] grid z-[-1] textStroke transition-[-webkit-text-fill-color_-webkit-text-stroke] duration-200 ${
-                lightDark &&
-                "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+                lightDark
+                  ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+                  : "text-black"
               }`}
             >
               ELITEGNOSIS
@@ -38,7 +39,7 @@ export default function Home({ lightDark }) {
               animate={{ opacity: 1, translateX: 0 }}
               transition={{ type: "easeInOut", duration: 1 }}
               className={`text-[clamp(100px,18vw,350px)] font-bold tracking-tighter showcaseHeader transition-colors duration-200 ${
-                lightDark && "dark:text-white"
+                lightDark ? "dark:text-white" : "text-black"
               }`}
             >
               AGENCY
@@ -48,14 +49,16 @@ export default function Home({ lightDark }) {
               animate={{ opacity: 1, translateX: 0 }}
               transition={{ type: "easeInOut", duration: 1 }}
               className={`border border-black bg-white gap-10 py-4 px-4 lg:py-6 lg:px-8 text-sm flex items-center hover:bg-black hover:text-white transition-colors duration-200 ease-in relative ${
-                lightDark && "dark:border-white dark:bg-black dark:text-white"
+                lightDark
+                  ? "dark:border-white dark:bg-black dark:text-white"
+                  : "text-black"
               }`}
             >
               À PROPOS{" "}
               <PiNavigationArrowFill className="text-base rotate-[133deg]" />
               <div
                 className={`absolute flex left-0 -bottom-10 text-xl w-full justify-between md:hidden transition-colors duration-200 ${
-                  lightDark && "dark:text-white"
+                  lightDark ? "dark:text-white" : "text-black"
                 }`}
               >
                 <BsInstagram />
