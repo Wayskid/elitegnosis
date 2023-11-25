@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { PiNavigationArrowFill } from "react-icons/pi";
 import { motion } from "framer-motion";
-import Img from "../assets/homeBkg2.png";
+import Img from "../assets/Project__2_-removebg.png";
 import { BsTwitterX, BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineLightBulb } from "react-icons/hi2";
 
 export default function Home({ lightDark }) {
   return (
@@ -71,7 +72,7 @@ export default function Home({ lightDark }) {
           <img
             src={Img}
             alt="bkgImg"
-            className="w-full absolute z-[-1] h-full object-cover xl:object-[5%_30%]"
+            className="w-full absolute z-[-1] h-full object-cover xl:object-[5%_30%] saturate-0"
           />
         </div>
       </div>

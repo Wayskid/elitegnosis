@@ -53,10 +53,42 @@ export default function NavMenu({
           onClick={() => setShowMenu(!showMenu)}
         />
       </div>
-      <NavLink>MAISON</NavLink>
-      <NavLink>À PROPOS</NavLink>
-      <NavLink>CONTACT</NavLink>
-      <NavLink>CALCULATRICE</NavLink>
+      <NavLink
+        className={`textStroke ${
+          lightDark
+            ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+            : "text-black"
+        }`}
+      >
+        MAISON
+      </NavLink>
+      <NavLink
+        className={`textStroke ${
+          lightDark
+            ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+            : "text-black"
+        }`}
+      >
+        À PROPOS
+      </NavLink>
+      <NavLink
+        className={`textStroke ${
+          lightDark
+            ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+            : "text-black"
+        }`}
+      >
+        CONTACT
+      </NavLink>
+      <NavLink
+        className={`textStroke ${
+          lightDark
+            ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
+            : "text-black"
+        }`}
+      >
+        CALCULATRICE
+      </NavLink>
       <NavLink
         className={`text-4xl border border-black self-center p-4 flex justify-between items-center font-medium ${
           lightDark && "dark:border-white"
