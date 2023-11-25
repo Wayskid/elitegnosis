@@ -25,7 +25,7 @@ export default function App() {
   }, [french, lightDark]);
 
   return (
-    <div className="h-full">
+    <div className="h-full text-black">
       <Nav
         french={french}
         setFrench={setFrench}
