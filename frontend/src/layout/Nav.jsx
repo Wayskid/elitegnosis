@@ -39,7 +39,7 @@ export default function Nav({ french, setFrench }) {
           {french ? "English" : "Française"}
         </NavLink>
         <div
-          className="grid gap-[9px] cursor-pointer md:hidden"
+          className="grid gap-[9px] cursor-pointer md:hidden ml-auto"
           onClick={() => setShowMenu(!showMenu)}
         >
           <div className="w-4 h-[1.8px] justify-self-end bg-black"></div>
