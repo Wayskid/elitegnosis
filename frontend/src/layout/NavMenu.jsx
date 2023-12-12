@@ -54,48 +54,57 @@ export default function NavMenu({
         />
       </div>
       <NavLink
+        onClick={() => setShowMenu(!showMenu)}
+        to="/"
         className={`textStroke ${
           lightDark
             ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
-            : "text-black"
+            : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
         MAISON
       </NavLink>
       <NavLink
+        onClick={() => setShowMenu(!showMenu)}
+        to="/about"
         className={`textStroke ${
           lightDark
             ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
-            : "text-black"
+            : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
         À PROPOS
       </NavLink>
       <NavLink
+        onClick={() => setShowMenu(!showMenu)}
+        to="/contact"
         className={`textStroke ${
           lightDark
             ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
-            : "text-black"
+            : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
         CONTACT
       </NavLink>
-      <NavLink
+      <a
+        href="/#simulator"
+        onClick={() => setShowMenu(!showMenu)}
         className={`textStroke ${
           lightDark
             ? "dark:text-white dark:[-webkit-text-fill-color:black] dark:[-webkit-text-stroke:3px_white]"
-            : "text-black"
+            : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
-        CALCULATRICE
-      </NavLink>
+        SIMULATEUR
+      </a>
       <NavLink
+        onClick={() => setShowMenu(!showMenu)}
+        to="/"
         className={`text-4xl border border-black self-center p-4 flex justify-between items-center font-medium ${
           lightDark && "dark:border-white"
         }`}
-        onClick={() => setFrench(!french)}
       >
-        {french ? "English" : "Française"}
+        {french ? "English" : "Français"}
       </NavLink>
     </motion.div>
   );

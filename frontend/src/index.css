@@ -29,5 +29,33 @@ body{
 .textStroke{
         color:black;
         -webkit-text-fill-color: white;
-        -webkit-text-stroke: 3px black;
+        -webkit-text-stroke: 3px #6e6fc3;
+}
+
+.bkgGradientDark{
+    background: linear-gradient(177.9deg, rgb(15, 16, 22) 30.6%, rgb(34, 37, 43) 105.8%);
+}
+
+.bkgGradientLight{
+    background: linear-gradient(177.9deg, rgb(247, 247, 251) 30.6%, rgb(230, 233, 237) 105.8%);
+}
+
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+    border: 1px solid transparent;
+    /* -webkit-text-fill-color: initial; */
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+    /* caret-color: white; */
 }

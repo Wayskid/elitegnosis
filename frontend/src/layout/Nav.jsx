@@ -8,22 +8,23 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
   return (
     <div
       className={`fixed top-0 z-50 w-full bg-white transition-colors duration-200 ${
-        lightDark ? "dark:bg-black text-white": "text-black"
+        lightDark ? "dark:bg-black text-white" : "text-black"
       }`}
     >
       <div className="flex p-6 items-center">
         <div className="flex">
-          <p
+          <NavLink
+            to="/"
             className={`text-2xl font-semibold md:border-r md:border-black pr-8 pb-1 leading-5 ${
               lightDark && "md:border-white"
             }`}
           >
             EliteGnosis
-          </p>
+          </NavLink>
           <div className="hidden md:flex gap-8 pl-8 font-medium">
-            <NavLink className="">HOME</NavLink>
-            <NavLink className="">CONTACT</NavLink>
-            <NavLink className="">ABOUT</NavLink>
+            <NavLink to="/">MAISON</NavLink>
+            <NavLink to="/">CONTACT</NavLink>
+            <NavLink to="/">À PROPOS</NavLink>
           </div>
         </div>
         <div className="relative ml-auto items-center hidden md:grid">
@@ -47,7 +48,7 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
           }`}
           onClick={() => setFrench(!french)}
         >
-          {french ? "English" : "Française"}
+          {french ? "English" : "Français"}
         </NavLink>
         <div
           className={`grid gap-[9px] cursor-pointer md:hidden ml-auto ${
