@@ -11,7 +11,9 @@ export default function ExcelExport() {
   async function exportToCSV() {
     //Api
     await axios
-      .get("http://localhost:3000/api/excel/get/6574b8f15ea10b9c5154b662")
+      .get(
+        "https://elitegnosis.onrender.com/api/excel/get/6574b8f15ea10b9c5154b662"
+      )
       .then((result) => {
         const file = result.data.map((res) => ({
           Email: res.email,

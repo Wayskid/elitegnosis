@@ -24,7 +24,6 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://checkout.stripe.com/c/pay/cs_test_a1Ru3xntIdsgvDiDOFOpyw0uId44AIdY5bm7jJ8aVUPse0nsRJ8WFbGFgL#fidkdWxOYHwnPyd1blpxYHZxWjA0S2R9UFFPPWdhVGg9M1VhX1BBdzxvblBRc3NnbTZcZDFfVmZCdjRQdWZhRmdqa3VhQTFJY39fRjcxYjVsZHBoXTNpYEZiRlUyTkdyNnQ9cXZ%2FV3JcdGFiNTU8ZlVCSk9vZCcpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
       "https://elitegnosis.netlify.app",
     ],
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],

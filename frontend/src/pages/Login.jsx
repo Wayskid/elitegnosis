@@ -25,7 +25,7 @@ export default function Login({ lightDark, setUserInfo }) {
 
       //Api
       await axios
-        .post("http://localhost:3000/api/user/login", {
+        .post("https://elitegnosis.onrender.com/api/user/login", {
           email: loginDetails.email,
           password: loginDetails.password,
         })

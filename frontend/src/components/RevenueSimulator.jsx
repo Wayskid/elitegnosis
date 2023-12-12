@@ -47,14 +47,17 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
       }, 1000);
 
       //Api
-      const data = await axios.post("http://localhost:3000/api/excel", {
-        email: simulatorVals.email,
-        followers: simulatorVals.noFollowers,
-        engagements: simulatorVals.noEngagement,
-        coursePrice: simulatorVals.coursePrice,
-        agencyFee,
-        netRevenue,
-      });
+      const data = await axios.post(
+        "https://elitegnosis.onrender.com/api/excel",
+        {
+          email: simulatorVals.email,
+          followers: simulatorVals.noFollowers,
+          engagements: simulatorVals.noEngagement,
+          coursePrice: simulatorVals.coursePrice,
+          agencyFee,
+          netRevenue,
+        }
+      );
     }
   }
 
@@ -202,7 +205,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
               />
               <input
                 className="bg-transparent outline-none ml-3 text-xl w-full px-1 pl focus:placeholder:opacity-0 placeholder:opacity-60"
-                placeholder="ex: 60"
+                placeholder="ex: 2"
                 required
                 type="number"
                 name="noEngagement"
