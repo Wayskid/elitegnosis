@@ -41,7 +41,7 @@ export default function Login({ lightDark, setUserInfo }) {
 
   return (
     <section
-      className={`h-screen transition-colors duration-200 px-6 grid items-center rounded-md w-[min(50rem,100%)] mx-auto relative ${
+      className={`h-screen transition-colors duration-200 px-6 grid items-center rounded-md w-[min(50rem,100%)] mx-auto relative mb-[20rem] ${
         lightDark ? "bg-black" : "bg-white"
       }`}
     >
