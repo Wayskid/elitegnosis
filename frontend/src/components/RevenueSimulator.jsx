@@ -82,7 +82,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
       {showResult ? (
         <div className="py-5 grid gap-10 lg:gap-20">
           <h1 className="text-[#2e9cd7] text-2xl text-center">
-            Votre revenu estimé sera
+            {t("home_page.result")}
           </h1>
           <motion.h1
             initial={{ scale: 0 }}
@@ -95,13 +95,13 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
               currency: "EUR",
             }).format(netRevenue)}
             <br />
-            <span className="text-slate-500">/mois</span>
+            <span className="text-slate-500">/{t("home_page.month")}</span>
           </motion.h1>
           <NavLink
             to="/contact"
             className="text-[#2e9cd7] text-2xl text-center"
           >
-            Laissez-nous vous aider à y parvenir
+            {t("home_page.help_you")}
           </NavLink>
           <button
             className="text-white flex items-center gap-1 bg-[#2e9cd7] mx-auto px-14 py-4 text-lg"
@@ -111,7 +111,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
               setShowResult(false);
             }}
           >
-            Calculer à nouveau
+            {t("home_page.go_again")}
           </button>
         </div>
       ) : (
