@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { HiChevronDown, HiMiniXMark } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { IoMoon, IoSunnySharp } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 export default function NavMenu({
   showMenu,
@@ -24,6 +25,9 @@ export default function NavMenu({
       transition: { type: "easeInOut", duration: 0.1 },
     },
   };
+
+  const { t, i18n } = useTranslation();
+
   return (
     <motion.div
       variants={showMenuAnim}
@@ -62,7 +66,7 @@ export default function NavMenu({
             : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
-        MAISON
+        {t("nav.home")}
       </NavLink>
       <NavLink
         onClick={() => setShowMenu(!showMenu)}
@@ -73,7 +77,7 @@ export default function NavMenu({
             : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
-        À PROPOS
+        {t("nav.about")}
       </NavLink>
       <NavLink
         onClick={() => setShowMenu(!showMenu)}
@@ -84,7 +88,7 @@ export default function NavMenu({
             : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
-        CONTACT
+        {t("nav.contact")}
       </NavLink>
       <a
         href="/#simulator"
@@ -95,10 +99,13 @@ export default function NavMenu({
             : "dark:[-webkit-text-fill-color:white] dark:[-webkit-text-stroke:3px_black] text-black"
         }`}
       >
-        SIMULATEUR
+        {t("nav.simulator")}
       </a>
       <NavLink
-        onClick={() => setShowMenu(!showMenu)}
+        onClick={() => {
+          setShowMenu(!showMenu);
+          setFrench(!french);
+        }}
         to="/"
         className={`text-4xl border border-black self-center p-4 flex justify-between items-center font-medium ${
           lightDark && "dark:border-white"

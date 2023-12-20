@@ -5,12 +5,23 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Excel from "./pages/Excel";
 import Footer from "./layout/Footer";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import { useTranslation } from "react-i18next";
 
 export default function App() {
   //Language selection
   const [french, setFrench] = useState(
     JSON.parse(localStorage.getItem("French")) || false
   );
+
+  const { t, i18n } = useTranslation();
+  useEffect(() => {
+    if (french) i18n.changeLanguage("fr");
+    else {
+      i18n.changeLanguage("en");
+    }
+  }, [french]);
 
   //Theme selection
   const [lightDark, setLightDark] = useState(
@@ -48,6 +59,11 @@ export default function App() {
           path="/"
           element={<Home lightDark={lightDark} setFileData={setFileData} />}
         ></Route>
+        <Route
+          path="/contact"
+          element={<Contact lightDark={lightDark} />}
+        ></Route>
+        <Route path="/about" element={<About lightDark={lightDark} />}></Route>
         <Route
           path="/login"
           element={<Login lightDark={lightDark} setUserInfo={setUserInfo} />}

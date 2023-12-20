@@ -18,7 +18,7 @@ export default function ExcelExport() {
         const file = result.data.map((res) => ({
           Email: res.email,
           Followers: res.followers,
-          Engagements: res.engagements,
+          Engagement: res.engagements + "%",
           "Course Price": res.coursePrice,
           "Agency Fee": res.agencyFee,
           "Net Revenue": res.netRevenue,
@@ -35,7 +35,7 @@ export default function ExcelExport() {
   }
   return (
     <button
-      className="text-white items-center bg-[#6e6fc3] mx-auto px-14 py-4 text-lg"
+      className="text-white items-center bg-[#2e9cd7] mx-auto px-14 py-4 text-lg"
       onClick={(e) => exportToCSV()}
     >
       Download

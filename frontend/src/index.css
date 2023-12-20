@@ -20,6 +20,7 @@ body{
     transition-property: background-color;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 200ms;
+        scroll-behavior: smooth;
 }
 
 .showcaseHeader{
@@ -29,7 +30,7 @@ body{
 .textStroke{
         color:black;
         -webkit-text-fill-color: white;
-        -webkit-text-stroke: 3px #6e6fc3;
+        -webkit-text-stroke: 3px #2e9cd7;
 }
 
 .bkgGradientDark{

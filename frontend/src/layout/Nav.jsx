@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import NavMenu from "./NavMenu";
 import { NavLink } from "react-router-dom";
 import { IoMoon, IoSunnySharp } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 export default function Nav({ french, setFrench, lightDark, setLightDark }) {
   const [showMenu, setShowMenu] = useState(false);
+  const { t, i18n } = useTranslation();
   return (
     <div
       className={`fixed top-0 z-50 w-full bg-white transition-colors duration-200 ${
         lightDark ? "dark:bg-black text-white" : "text-black"
       }`}
     >
-      <div className="flex p-6 items-center">
+      <div className="flex py-6 px-6 md:px-8 items-center">
         <div className="flex">
           <NavLink
             to="/"
@@ -22,9 +24,9 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
             EliteGnosis
           </NavLink>
           <div className="hidden md:flex gap-8 pl-8 font-medium">
-            <NavLink to="/">MAISON</NavLink>
-            <NavLink to="/">CONTACT</NavLink>
-            <NavLink to="/">À PROPOS</NavLink>
+            <NavLink to="/">{t("nav.home")}</NavLink>
+            <NavLink to="/contact">{t("nav.contact")}</NavLink>
+            <NavLink to="/about">{t("nav.about")}</NavLink>
           </div>
         </div>
         <div className="relative ml-auto items-center hidden md:grid">

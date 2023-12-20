@@ -9,14 +9,17 @@ import {
 import axios from "axios";
 import { PiPercent } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function RevenueSimulator({ lightDark, setFileData }) {
+  const { t, i18n } = useTranslation();
+
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
   const [simulatorVals, setSimulatorVals] = useState({
     email: "",
     noFollowers: "",
-    noEngagement: "",
+    engagementRate: "",
     coursePrice: "",
   });
 
@@ -34,7 +37,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
     if (Object.values(simulatorVals)) {
       setLoading(true);
       const follEng =
-        (simulatorVals.noFollowers * simulatorVals.noEngagement) / 100;
+        (simulatorVals.noFollowers * simulatorVals.engagementRate) / 100;
       const revenue = follEng * simulatorVals.coursePrice;
       const agencyFee = 30;
       const netRevenue = (revenue * (100 - agencyFee)) / 100;
@@ -52,7 +55,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
         {
           email: simulatorVals.email,
           followers: simulatorVals.noFollowers,
-          engagements: simulatorVals.noEngagement,
+          engagements: simulatorVals.engagementRate,
           coursePrice: simulatorVals.coursePrice,
           agencyFee,
           netRevenue,
@@ -73,19 +76,19 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
         alt="Finance Icon"
         className="absolute justify-self-center w-20 -mt-12 md:w-40 md:-mt-24"
       />
-      <motion.p className="text-[clamp(30px,5vw,50px)] text-center text-[#6e6fc3] font-semibold transition-colors duration-200 mb-5 md:mb-10">
-        Simulateur de revenus
+      <motion.p className="text-[clamp(30px,5vw,50px)] text-center text-[#2e9cd7] font-semibold transition-colors duration-200 mb-5 md:mb-10">
+        {t("home_page.offer_btn")}
       </motion.p>
       {showResult ? (
         <div className="py-5 grid gap-10 lg:gap-20">
-          <h1 className="text-[#6e6fc3] text-2xl text-center">
+          <h1 className="text-[#2e9cd7] text-2xl text-center">
             Votre revenu estimé sera
           </h1>
           <motion.h1
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1 }}
-            className="text-[#6e6fc3] text-6xl text-center"
+            className="text-[#2e9cd7] text-6xl text-center"
           >
             {Intl.NumberFormat("en-FR", {
               style: "currency",
@@ -96,12 +99,12 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
           </motion.h1>
           <NavLink
             to="/contact"
-            className="text-[#6e6fc3] text-2xl text-center"
+            className="text-[#2e9cd7] text-2xl text-center"
           >
             Laissez-nous vous aider à y parvenir
           </NavLink>
           <button
-            className="text-white flex items-center gap-1 bg-[#6e6fc3] mx-auto px-14 py-4 text-lg"
+            className="text-white flex items-center gap-1 bg-[#2e9cd7] mx-auto px-14 py-4 text-lg"
             onClick={() => {
               setLoading(false);
               setNetRevenue(0);
@@ -114,6 +117,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
       ) : (
         <form
           className="grid gap-10 py-5 w-[min(30rem,100%)] mx-auto"
+          autoComplete="off"
           onSubmit={handleCalculation}
         >
           <div className="grid">
@@ -123,10 +127,10 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
                 lightDark ? "dark:text-white" : "text-black"
               }`}
             >
-              Email
+              {t("home_page.email")}
             </label>
             <div
-              className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] ${
+              className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] ${
                 lightDark
                   ? "bg-[rgb(34,37,43)] text-white"
                   : "text-black bg-[rgb(247,247,251)]"
@@ -144,6 +148,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
                 type="email"
                 name="email"
                 id="email"
+                autoComplete="new-password"
                 value={simulatorVals.email}
                 onChange={handleChange}
               />
@@ -156,10 +161,10 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
                 lightDark ? "dark:text-white" : "text-black"
               }`}
             >
-              Number of Followers
+              {t("home_page.followers")}
             </label>
             <div
-              className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] focus:placeholder:opacity-0 placeholder:opacity-60 ${
+              className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] focus:placeholder:opacity-0 placeholder:opacity-60 ${
                 lightDark
                   ? "bg-[rgb(34,37,43)] text-white"
                   : "text-black bg-[rgb(247,247,251)]"
@@ -184,15 +189,15 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
           </div>
           <div className="grid">
             <label
-              htmlFor="noEngagement"
+              htmlFor="engagementRate"
               className={`mb-2 font-semibold text- ${
                 lightDark ? "dark:text-white" : "text-black"
               }`}
             >
-              Number of Engagements (%)
+              {t("home_page.engagements")} (%)
             </label>
             <div
-              className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] focus:placeholder:opacity-0 placeholder:opacity-60 ${
+              className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] focus:placeholder:opacity-0 placeholder:opacity-60 ${
                 lightDark
                   ? "bg-[rgb(34,37,43)] text-white"
                   : "text-black bg-[rgb(247,247,251)]"
@@ -208,11 +213,11 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
                 placeholder="ex: 2"
                 required
                 type="number"
-                name="noEngagement"
-                id="noEngagement"
+                name="engagementRate"
+                id="engagementRate"
                 max="100"
                 min="0"
-                value={simulatorVals.noEngagement}
+                value={simulatorVals.engagementRate}
                 onChange={handleChange}
               />
             </div>
@@ -224,10 +229,10 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
                 lightDark ? "dark:text-white" : "text-black"
               }`}
             >
-              Course Price ( &euro; )
+              {t("home_page.price")} ( &euro; )
             </label>
             <div
-              className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] focus:placeholder:opacity-0 placeholder:opacity-60 ${
+              className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] focus:placeholder:opacity-0 placeholder:opacity-60 ${
                 lightDark
                   ? "bg-[rgb(34,37,43)] text-white"
                   : "text-black bg-[rgb(247,247,251)]"
@@ -251,10 +256,10 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
             </div>
           </div>
           <button
-            className="mt-2 text-white flex items-center gap-1 bg-[#6e6fc3] mx-auto px-14 py-4 text-lg"
+            className="mt-2 text-white flex items-center gap-1 bg-[#2e9cd7] mx-auto px-14 py-4 text-lg"
             disabled={loading}
           >
-            {loading ? "Estimation..." : "Estimation"}
+            {loading ? "Estimating..." : t("home_page.revenue_btn")}
           </button>
         </form>
       )}

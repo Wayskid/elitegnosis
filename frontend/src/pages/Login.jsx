@@ -41,11 +41,11 @@ export default function Login({ lightDark, setUserInfo }) {
 
   return (
     <section
-      className={`h-screen transition-colors duration-200 px-6 grid items-center rounded-md w-[min(50rem,100%)] mx-auto relative mb-[20rem] ${
+      className={`h-screen transition-colors duration-200 px-6 grid items-center rounded-md w-[min(50rem,100%)] mx-auto ${
         lightDark ? "bg-black" : "bg-white"
       }`}
     >
-      <p className="text-[clamp(30px,5vw,50px)] text-center text-[#6e6fc3] font-semibold transition-colors duration-200 self-end">
+      <p className="text-[clamp(30px,5vw,50px)] text-center text-[#2e9cd7] font-semibold transition-colors duration-200 self-end">
         Login
       </p>
       <form
@@ -63,7 +63,7 @@ export default function Login({ lightDark, setUserInfo }) {
             Email
           </label>
           <div
-            className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] ${
+            className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] ${
               lightDark
                 ? "bg-[rgb(34,37,43)] text-white"
                 : "text-black bg-[rgb(247,247,251)]"
@@ -96,7 +96,7 @@ export default function Login({ lightDark, setUserInfo }) {
             Password
           </label>
           <div
-            className={`border-[1px] p-3 flex focus-within:border-[#6e6fc3] focus:placeholder:opacity-0 ${
+            className={`border-[1px] p-3 flex focus-within:border-[#2e9cd7] focus:placeholder:opacity-0 ${
               lightDark
                 ? "bg-[rgb(34,37,43)] text-white"
                 : "text-black bg-[rgb(247,247,251)]"
@@ -120,7 +120,7 @@ export default function Login({ lightDark, setUserInfo }) {
           </div>
         </div>
         <button
-          className="mt-2 text-white flex items-center gap-1 bg-[#6e6fc3] mx-auto px-14 py-4 text-lg"
+          className="mt-2 text-white flex items-center gap-1 bg-[#2e9cd7] mx-auto px-14 py-4 text-lg"
           disabled={loading}
         >
           {loading ? "Logging in..." : "Login"}
