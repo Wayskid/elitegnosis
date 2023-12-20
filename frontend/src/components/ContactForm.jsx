@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import footerImg from "../assets/footerImg.jpg";
 import { MdAlternateEmail, MdMessage } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm({ lightDark }) {
+  const { t, i18n } = useTranslation();
   const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
   const [footerContact, setFooterContact] = useState({
@@ -30,7 +32,7 @@ export default function ContactForm({ lightDark }) {
         <div className="flex items-center gap-5 mb-10">
           {" "}
           <div className="w-5 h-5 rounded-full bg-white"></div>
-          <p className="text-4xl text-white">Get in touch</p>
+          <p className="text-4xl text-white">{t("home_page.get_in_touch")}</p>
         </div>
         <form
           className="grid gap-5"
@@ -40,7 +42,7 @@ export default function ContactForm({ lightDark }) {
             <BsPerson className="self-top mt-[4px] text-xl text-black" />
             <input
               className="bg-transparent outline-none ml-3 text-xl w-[min(30rem,100%)] px-1 focus:placeholder:opacity-0 placeholder:opacity-60"
-              placeholder="Name"
+              placeholder={t("home_page.name")}
               required
               type="text"
               name="name"
@@ -53,7 +55,7 @@ export default function ContactForm({ lightDark }) {
             <MdAlternateEmail className="self-top mt-[4px] text-xl text-black" />
             <input
               className="bg-transparent outline-none ml-3 text-xl w-full px-1 focus:placeholder:opacity-0 placeholder:opacity-60"
-              placeholder="Email"
+              placeholder={t("home_page.email")}
               required
               type="email"
               name="email"
@@ -66,7 +68,7 @@ export default function ContactForm({ lightDark }) {
             <MdMessage className="self-top mt-[4px] text-xl text-black" />
             <textarea
               className="bg-transparent outline-none ml-3 text-xl w-full px-1 focus:placeholder:opacity-0 placeholder:opacity-60"
-              placeholder="Message"
+              placeholder={t("home_page.message")}
               required
               name="message"
               id="message"
@@ -79,7 +81,7 @@ export default function ContactForm({ lightDark }) {
             className="items-center px-14 py-3 text- border rounded-md text-black bg-[rgb(247,247,251)] border-black"
             disabled={loading}
           >
-            {loading ? "Sending..." : "Send Message"}
+            {loading ? `${t("home_page.send_message")}...` : t("home_page.send_message")}
           </button>
         </form>
       </div>
