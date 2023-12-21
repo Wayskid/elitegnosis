@@ -8,6 +8,8 @@ import Footer from "./layout/Footer";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import { useTranslation } from "react-i18next";
+import ChatBubble from "./layout/ChatBubble";
+import Chat from "./layout/Chat";
 
 export default function App() {
   //Language selection
@@ -46,6 +48,9 @@ export default function App() {
     JSON.parse(localStorage.getItem("UserInfo")) || false
   );
 
+  //Chat bubble
+  const [showChat, setShowChat] = useState(false);
+
   return (
     <div className="h-full">
       <Nav
@@ -79,6 +84,8 @@ export default function App() {
           }
         ></Route>
       </Routes>
+      {/* <ChatBubble showChat={showChat} setShowChat={setShowChat} /> */}
+      {/* <Chat showChat={showChat} lightDark={lightDark} /> */}
       <Footer lightDark={lightDark} />
     </div>
   );

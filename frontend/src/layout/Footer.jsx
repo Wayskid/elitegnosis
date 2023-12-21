@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { useTranslation } from "react-i18next";
 
-
 export default function Footer({ lightDark }) {
   const { t, i18n } = useTranslation();
   return (
@@ -18,7 +17,7 @@ export default function Footer({ lightDark }) {
               {t("home_page.phone")}:
             </p>
             <p className={!lightDark ? "text-black" : "text-white"}>
-              454656557567
+              +46 (722) 572457
             </p>
           </div>
           <div className="md:justify-self-end">
@@ -26,8 +25,7 @@ export default function Footer({ lightDark }) {
               {t("home_page.address")}:
             </p>
             <p className={!lightDark ? "text-black" : "text-white"}>
-              Patricia C. Amedee 41 Waldeck Grapevine
-              <br /> Nashville, TX 76
+              14 rue Louis Aurelia, Monaco
             </p>
           </div>
           <div className="md:justify-self-end">
@@ -39,14 +37,16 @@ export default function Footer({ lightDark }) {
                 !lightDark ? "text-black" : "text-white"
               }`}
             >
-              info@yourdomain.com
+              elitegnosis@gmail.com
             </p>
           </div>
           <div className="md:justify-self-end">
             <p className={!lightDark ? "text-black" : "text-white"}>
               {t("home_page.social")}:
             </p>
-            <p className={!lightDark ? "text-black" : "text-white"}>Phone</p>
+            <p className={!lightDark ? "text-black" : "text-white"}>
+              IG: @elitegnosis.ig
+            </p>
           </div>
         </div>
 

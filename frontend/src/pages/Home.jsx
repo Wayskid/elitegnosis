@@ -20,7 +20,7 @@ export default function Home({ lightDark, setFileData }) {
         />
         <div className="px-6 md:px-8 self-center grid">
           <p
-            className={`showcaseHeader text-[clamp(92px,18vw,250px)]  tracking-tighter leading-[1em] ${
+            className={`showcaseHeader text-[clamp(70px,13vw,150px)]  tracking-tighter leading-[1em] ${
               lightDark
                 ? "dark:[-webkit-text-fill-color:transparent] dark:[-webkit-text-stroke:3.5px_#2e9cd7]"
                 : "[-webkit-text-fill-color:transparent] [-webkit-text-stroke:3px_#2e9cd7]"
@@ -29,7 +29,7 @@ export default function Home({ lightDark, setFileData }) {
             ELITEGNOSIS
           </p>
           <p
-            className={`showcaseHeader text-[clamp(92px,18vw,250px)] tracking-tighter leading-[1em] font-bold ${
+            className={`showcaseHeader text-[clamp(70px,13vw,150px)] tracking-tighter leading-[1em] font-bold ${
               lightDark ? "dark:text-white" : "text-black"
             }`}
           >
@@ -37,7 +37,7 @@ export default function Home({ lightDark, setFileData }) {
           </p>
           <a
             href="#offers"
-            className={`border border-black py-4 md:py-6 px-20 transition-colors duration-200 ease-in mt-5 mr-auto md:text-lg ${
+            className={`border border-black py-3 md:py-5 px-16 transition-colors duration-200 ease-in mt-5 mr-auto md:text-lg ${
               lightDark
                 ? "dark:border-white dark:bg-white dark:text-black"
                 : "text-white bg-black"
@@ -66,13 +66,18 @@ export default function Home({ lightDark, setFileData }) {
               <p className="bg-[#2e9cd7] p-4 text-[4rem] grid place-content-center text-white">
                 <MdOutlineSchool />
               </p>
-              <p
-                className={`text-5xl text-center px-5 md:px-16 py-20 ${
-                  lightDark ? "text-white" : "text-black"
-                }`}
-              >
-                {t("home_page.online_course")}
-              </p>
+              <div className="px-5 md:px-16 py-20 text-center">
+                <p
+                  className={`text-5xl mb-5 ${
+                    lightDark ? "text-white" : "text-black"
+                  }`}
+                >
+                  {t("home_page.online_course")}
+                </p>
+                <p className={`${lightDark ? "text-white" : "text-black"}`}>
+                  {t("home_page.online_course_des")}
+                </p>
+              </div>
             </div>
             <div
               className={` rounded-lg overflow-hidden ${
@@ -82,13 +87,18 @@ export default function Home({ lightDark, setFileData }) {
               <p className="bg-[#2e9cd7] p-4 text-[4rem] grid place-content-center text-white">
                 <MdOutlinePeopleAlt />
               </p>
-              <p
-                className={`text-5xl text-center px-5 md:px-16 py-20 break-words ${
-                  lightDark ? "text-white" : "text-black"
-                }`}
-              >
-                {t("home_page.online_comm")}
-              </p>
+              <div className="px-5 md:px-16 py-20 text-center">
+                <p
+                  className={`text-5xl mb-5 ${
+                    lightDark ? "text-white" : "text-black"
+                  }`}
+                >
+                  {t("home_page.online_comm")}
+                </p>
+                <p className={`${lightDark ? "text-white" : "text-black"}`}>
+                  {t("home_page.online_comm_des")}
+                </p>
+              </div>
             </div>
           </div>
           <a

@@ -3,6 +3,7 @@ import { BsPerson } from "react-icons/bs";
 import footerImg from "../assets/footerImg.jpg";
 import { MdAlternateEmail, MdMessage } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm({ lightDark }) {
   const { t, i18n } = useTranslation();
@@ -13,6 +14,40 @@ export default function ContactForm({ lightDark }) {
     email: "",
     message: "",
   });
+
+  function sendEmail() {
+    e.preventDefault();
+    if (Object.values(contactVal).every((val) => val.length > 0)) {
+      setLoading(true);
+      emailjs
+        .send(
+          "service_0ho156e",
+          "template_idj0jxb",
+          {
+            ...contactVal,
+          },
+          "zTkg27Ahp4AaPiT1q"
+        )
+        .then(
+          (result) => {
+            setEmailSentRes(result);
+            setLoading(false);
+            setContactVal({
+              name: "",
+              email: "",
+              message: "",
+            });
+            setTimeout(() => {
+              setEmailSentRes();
+            }, 4000);
+          },
+          (error) => {
+            console.log(error);
+            setLoading(false);
+          }
+        );
+    }
+  }
 
   function handleChange(e) {
     setFooterContact({
@@ -34,10 +69,7 @@ export default function ContactForm({ lightDark }) {
           <div className="w-5 h-5 rounded-full bg-white"></div>
           <p className="text-4xl text-white">{t("home_page.get_in_touch")}</p>
         </div>
-        <form
-          className="grid gap-5"
-          // onSubmit={handleCalculation}
-        >
+        <form className="grid gap-5" onSubmit={sendEmail}>
           <div className="rounded-md border-[1px] p-2 flex focus-within:border-[#2e9cd7] focus:placeholder:opacity-0 placeholder:opacity-60 text-black bg-[rgb(247,247,251)] border-black">
             <BsPerson className="self-top mt-[4px] text-xl text-black" />
             <input
@@ -81,7 +113,9 @@ export default function ContactForm({ lightDark }) {
             className="items-center px-14 py-3 text- border rounded-md text-black bg-[rgb(247,247,251)] border-black"
             disabled={loading}
           >
-            {loading ? `${t("home_page.send_message")}...` : t("home_page.send_message")}
+            {loading
+              ? `${t("home_page.send_message")}...`
+              : t("home_page.send_message")}
           </button>
         </form>
       </div>

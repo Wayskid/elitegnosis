@@ -60,3 +60,17 @@ input:-webkit-autofill:focus{
     transition: background-color 5000s ease-in-out 0s;
     /* caret-color: white; */
 }
+
+/* Spin */
+.spin{
+    animation: spin 0.8s;
+}
+
+@keyframes spin {
+    from{
+        rotate:1deg
+    }
+    to{
+        rotate: 540deg
+    }
+}

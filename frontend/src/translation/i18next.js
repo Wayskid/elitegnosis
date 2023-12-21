@@ -15,14 +15,18 @@ i18next.use(initReactI18next).init({
         home_page: {
           our_offers: "Our Offers",
           online_course: "Online Courses",
+          online_course_des:
+            "Allow your followers to learn more from you. Talk about your passions or anything else! ",
           online_comm: "Online Community",
+          online_comm_des:
+            "Allow your followers to connect more with you but most importantly connect between each other. Create a stronger community!",
           offer_btn: "Revenue Simulator",
           name: "Name",
           email: "Email",
           message: "Message",
           followers: "Number of Followers",
           engagements: "Engagement Rate",
-          price: "Paid Online Course (monthly)",
+          price: "Paid Online Course / Community (monthly)",
           revenue_btn: "Estimate",
           result: "Your estimated income will be",
           help_you: "Let us help you get there",
@@ -33,6 +37,10 @@ i18next.use(initReactI18next).init({
           phone: "Phone",
           address: "Address",
           social: "Social",
+        },
+        contact_page: {
+          add_value: "Want to Add Value To Your Audience?",
+          make_it_happen: "Let's Make It Happen!",
         },
       },
     },
@@ -47,14 +55,18 @@ i18next.use(initReactI18next).init({
         home_page: {
           our_offers: "Nos offres",
           online_course: "Cours en ligne",
+          online_course_des:
+            "Apprend à tes abonnés tes passions. Pour passer de simple créateur à Mentor!",
           online_comm: "Communauté en ligne",
+          online_comm_des:
+            "Permets à tes abonnés de connecter plus avec toi mais surtout de connecter plus entre eux. Créer un communauté plus soudée et loyale!",
           offer_btn: "Simulateur de revenus",
           name: "Nom",
           email: "E-mail",
           message: "Message",
           followers: "Nombre d'abonnés",
           engagements: "Taux d'Engagement",
-          price: "Formation en Ligne ( par mois )",
+          price: "Formation / Communauté en Ligne ( par mois )",
           revenue_btn: "Estimation",
           result: "Votre revenu estimé sera",
           help_you: "Laissez-nous vous aider à y parvenir",
@@ -65,6 +77,10 @@ i18next.use(initReactI18next).init({
           phone: "Téléphone",
           address: "Adresse",
           social: "Sociale",
+        },
+        contact_page: {
+          add_value: "Tu Veux Ajouter De La Valeur À Ton Audience ?",
+          make_it_happen: "Parlons-En!",
         },
       },
     },

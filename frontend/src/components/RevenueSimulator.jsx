@@ -177,7 +177,7 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
               />
               <input
                 className="bg-transparent outline-none ml-3 text-xl w-full px-1 pl focus:placeholder:opacity-0 placeholder:opacity-60"
-                placeholder="ex: 2000"
+                placeholder="ex: 5000"
                 required
                 type="number"
                 name="noFollowers"
