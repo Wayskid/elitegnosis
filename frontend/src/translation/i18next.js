@@ -42,6 +42,13 @@ i18next.use(initReactI18next).init({
           add_value: "Want to Add Value To Your Audience?",
           make_it_happen: "Let's Make It Happen!",
         },
+        chat_bubble: {
+          how_to_help: "How can we help?",
+          response: "We usually respond in a few hours",
+          subject: "Subject",
+          on_it: "We're on it!",
+          done: "You'll receive an email reply within a few hours.",
+        },
       },
     },
     fr: {
@@ -81,6 +88,13 @@ i18next.use(initReactI18next).init({
         contact_page: {
           add_value: "Tu Veux Ajouter De La Valeur À Ton Audience ?",
           make_it_happen: "Parlons-En!",
+        },
+        chat_bubble: {
+          how_to_help: "Comment pouvons nous aider?",
+          response: "Nous répondons généralement en quelques heures",
+          subject: "Sujette",
+          on_it: "Nous nous en occupons!",
+          done: "Vous recevrez une réponse par e-mail dans quelques heures.",
         },
       },
     },

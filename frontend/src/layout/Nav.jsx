@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
 
 export default function Nav({ french, setFrench, lightDark, setLightDark }) {
-
   const [scrollDistance, setScrollDistance] = useState(0);
   const { scrollY } = useScroll();
 
@@ -35,7 +34,7 @@ export default function Nav({ french, setFrench, lightDark, setLightDark }) {
     <motion.div
       variants={variants}
       animate={scrollDistance > 150 ? "end" : "initial"}
-      className={`fixed top-0 z-50 w-full bg transition-colors duration-200  
+      className={`fixed top-0 z-40 w-full bg transition-colors duration-200  
       ${
         lightDark
           ? `text-white ${scrollDistance > 150 && "bg-black"}`

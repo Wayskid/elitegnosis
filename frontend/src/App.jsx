@@ -14,7 +14,7 @@ import Chat from "./layout/Chat";
 export default function App() {
   //Language selection
   const [french, setFrench] = useState(
-    JSON.parse(localStorage.getItem("French")) || true
+    JSON.parse(localStorage.getItem("French")) ?? true
   );
 
   const { t, i18n } = useTranslation();
@@ -27,7 +27,7 @@ export default function App() {
 
   //Theme selection
   const [lightDark, setLightDark] = useState(
-    JSON.parse(localStorage.getItem("Theme")) || true
+    JSON.parse(localStorage.getItem("Theme")) ?? true
   );
 
   useEffect(() => {
@@ -84,8 +84,10 @@ export default function App() {
           }
         ></Route>
       </Routes>
-      {/* <ChatBubble showChat={showChat} setShowChat={setShowChat} /> */}
-      {/* <Chat showChat={showChat} lightDark={lightDark} /> */}
+      <div className="fixed bottom-3 right-3 justify-items-end w-[min(23rem,93%)] grid gap-2 z-40">
+        <Chat showChat={showChat} lightDark={lightDark} />
+        <ChatBubble showChat={showChat} setShowChat={setShowChat} />
+      </div>
       <Footer lightDark={lightDark} />
     </div>
   );
