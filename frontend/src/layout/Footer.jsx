@@ -37,7 +37,7 @@ export default function Footer({ lightDark }) {
                 !lightDark ? "text-black" : "text-white"
               }`}
             >
-              elitegnosis@gmail.com
+              contact.elitegnosis@gmail.com
             </p>
           </div>
           <div className="md:justify-self-end">

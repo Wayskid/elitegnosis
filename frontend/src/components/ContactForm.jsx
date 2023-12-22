@@ -15,24 +15,24 @@ export default function ContactForm({ lightDark }) {
     message: "",
   });
 
-  function sendEmail() {
+  function sendEmail(e) {
     e.preventDefault();
-    if (Object.values(contactVal).every((val) => val.length > 0)) {
+    if (Object.values(footerContact).every((val) => val.length > 0)) {
       setLoading(true);
       emailjs
         .send(
-          "service_0ho156e",
-          "template_idj0jxb",
+          "service_82cheld",
+          "template_025ph7t",
           {
-            ...contactVal,
+            ...footerContact,
           },
-          "zTkg27Ahp4AaPiT1q"
+          "cozjcJvRVN6Q6PN29"
         )
         .then(
           (result) => {
             setEmailSentRes(result);
             setLoading(false);
-            setContactVal({
+            setFooterContact({
               name: "",
               email: "",
               message: "",
@@ -40,6 +40,7 @@ export default function ContactForm({ lightDark }) {
             setTimeout(() => {
               setEmailSentRes();
             }, 4000);
+            console.log(result);
           },
           (error) => {
             console.log(error);
@@ -51,7 +52,7 @@ export default function ContactForm({ lightDark }) {
 
   function handleChange(e) {
     setFooterContact({
-      ...simulatorVals,
+      ...footerContact,
       [e.target.name]: e.target.value,
     });
   }

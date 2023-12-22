@@ -14,7 +14,7 @@ import Chat from "./layout/Chat";
 export default function App() {
   //Language selection
   const [french, setFrench] = useState(
-    JSON.parse(localStorage.getItem("French")) || false
+    JSON.parse(localStorage.getItem("French")) || true
   );
 
   const { t, i18n } = useTranslation();
@@ -27,7 +27,7 @@ export default function App() {
 
   //Theme selection
   const [lightDark, setLightDark] = useState(
-    JSON.parse(localStorage.getItem("Theme")) || false
+    JSON.parse(localStorage.getItem("Theme")) || true
   );
 
   useEffect(() => {

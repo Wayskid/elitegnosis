@@ -77,7 +77,7 @@ export default function Contact({ lightDark }) {
             >
               <MdOutlineMail className="text-5xl self-center" />
               <p className="text-center font-medium">
-                elitegnosis
+                contact.elitegnosis
                 <br />
                 @gmail.com
               </p>
