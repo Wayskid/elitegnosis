@@ -13,6 +13,8 @@ i18next.use(initReactI18next).init({
           simulator: "SIMULATOR",
         },
         home_page: {
+          level: "Level Up!",
+          your_followers: "Your Followers Deserve It!",
           our_offers: "Our Offers",
           online_course: "Online Courses",
           online_course_des:
@@ -60,6 +62,8 @@ i18next.use(initReactI18next).init({
           simulator: "SIMULATEUR",
         },
         home_page: {
+          level: "Level Up!",
+          your_followers: "Tes Abonnés Le Méritent!",
           our_offers: "Nos offres",
           online_course: "Cours en ligne",
           online_course_des:

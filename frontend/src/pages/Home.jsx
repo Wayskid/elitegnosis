@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 export default function Home({ lightDark, setFileData }) {
   const { t, i18n } = useTranslation();
   return (
-    <div className="relative">
-      <section className="h-screen grid relative">
+    <div className="relative ">
+      <section className="h-screen grid grid-rows-[2fr_1fr] lg:grid-rows-[unset] lg:grid-cols-2 relative gap-10">
         <img
           src={School}
           className={`absolute -z-10 w-full h-full object-cover grayscale ${
@@ -18,9 +18,9 @@ export default function Home({ lightDark, setFileData }) {
           }`}
           alt=""
         />
-        <div className="px-6 md:px-8 self-center grid">
+        <div className="px-6 md:px-8 lg:self-center self-end grid justify-center lg:justify-start">
           <p
-            className={`showcaseHeader text-[clamp(70px,13vw,150px)]  tracking-tighter leading-[1em] ${
+            className={`showcaseHeader text-center lg:text-left text-[clamp(90px,13vw,150px)]  tracking-tighter leading-[1em] ${
               lightDark
                 ? "dark:[-webkit-text-fill-color:transparent] dark:[-webkit-text-stroke:3.5px_#2e9cd7]"
                 : "[-webkit-text-fill-color:transparent] [-webkit-text-stroke:3px_#2e9cd7]"
@@ -29,7 +29,7 @@ export default function Home({ lightDark, setFileData }) {
             ELITEGNOSIS
           </p>
           <p
-            className={`showcaseHeader text-[clamp(70px,13vw,150px)] tracking-tighter leading-[1em] font-bold ${
+            className={`showcaseHeader text-center lg:text-left text-[clamp(90px,13vw,150px)] tracking-tighter leading-[1em] font-bold ${
               lightDark ? "dark:text-white" : "text-black"
             }`}
           >
@@ -37,7 +37,7 @@ export default function Home({ lightDark, setFileData }) {
           </p>
           <a
             href="#offers"
-            className={`border border-black py-3 md:py-5 px-16 transition-colors duration-200 ease-in mt-5 mr-auto md:text-lg ${
+            className={`border border-black py-3 md:py-5 px-16 transition-colors duration-200 ease-in mt-5 mx-auto lg:mr-auto lg:ml-0 md:text-lg ${
               lightDark
                 ? "dark:border-white dark:bg-white dark:text-black"
                 : "text-white bg-black"
@@ -45,6 +45,22 @@ export default function Home({ lightDark, setFileData }) {
           >
             {t("home_page.our_offers")}
           </a>
+        </div>
+        <div className="grid lg:self-center self-start lg:gap-5 px-6">
+          <p
+            className={`text-3xl md:text-5xl text-center lg:text-left lg:border-l-4 lg:py-10 px-6 ${
+              lightDark ? "text-white border-white" : "text-black border-black"
+            }`}
+          >
+            {t("home_page.level")}
+          </p>
+          <p
+            className={`text-3xl md:text-5xl text-center lg:text-right lg:border-r-4 lg:py-10 px-6 ${
+              lightDark ? "text-white border-white" : "text-black border-black"
+            }`}
+          >
+            {t("home_page.your_followers")}
+          </p>
         </div>
       </section>
       <div
