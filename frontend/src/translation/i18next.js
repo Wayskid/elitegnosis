@@ -51,6 +51,14 @@ i18next.use(initReactI18next).init({
           on_it: "We're on it!",
           done: "You'll receive an email reply within a few hours.",
         },
+        about_page: {
+          vision: "Our Vision",
+          our_vision:
+            "To empower passionate creators and elevate their influence by providing innovative digital solutions. We envision a world where every content creator can seamlessly transition from influencer to mentor, guiding their audience through immersive online master courses and fostering genuine connections within exclusive paid online communities.",
+          mission: "Our Mission",
+          our_mission:
+            "Our Mission At Elite Gnosis, our mission is to transform digital content creators into industry leaders. We are committed to enabling creators to monetize their expertise by offering comprehensive website solutions. Through personalized online master courses, we empower creators to transcend traditional content boundaries and become mentors. Our paid online communities provide a space for meaningful interactions, enabling creators to cultivate a dedicated and engaged audience. By fostering education, connection, and community, we strive to redefine the creator experience and contribute to the growth of authentic online relationships.",
+        },
       },
     },
     fr: {
@@ -99,6 +107,14 @@ i18next.use(initReactI18next).init({
           subject: "Sujette",
           on_it: "Nous nous en occupons!",
           done: "Vous recevrez une réponse par e-mail dans quelques heures.",
+        },
+        about_page: {
+          vision: "Notre vision",
+          our_vision:
+            "Donner du pouvoir aux créateurs passionnés et accroître leur influence en fournissant des solutions numériques innovantes. Nous envisageons un monde dans lequel chaque créateur de contenu peut passer en toute transparence d'influenceur à mentor, guidant son public à travers des cours de maîtrise en ligne immersifs et favorisant de véritables connexions au sein de communautés en ligne payantes exclusives.",
+          mission: "Notre mission",
+          our_mission:
+            "Notre mission Chez Elite Gnosis, notre mission est de transformer les créateurs de contenu numérique en leaders de l'industrie. Nous nous engageons à permettre aux créateurs de monétiser leur expertise en proposant des solutions de sites Web complètes. Grâce à des cours de master en ligne personnalisés, nous donnons les moyens créateurs à transcender les frontières traditionnelles du contenu et à devenir mentors. Nos communautés en ligne payantes offrent un espace pour des échanges significatifs interactions, permettant aux créateurs de cultiver une relation dédiée et engagée public. En favorisant l'éducation, les liens et la communauté, nous nous efforçons redéfinir l’expérience du créateur et contribuer à la croissance de relations en ligne authentiques.",
         },
       },
     },
