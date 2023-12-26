@@ -65,7 +65,14 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
   }
 
   return (
-    <section
+    <motion.section
+      initial={{ translateY: 80, opacity: 0 }}
+      whileInView={{
+        translateY: 0,
+        opacity: 1,
+        transition: { type: "easeInOut", delay: 0.3 },
+      }}
+      viewport={{ once: true, amount: "some" }}
       id="simulator"
       className={`mb-20 mt-36 md:mt-56 transition-colors duration-200 px-6 pt-28 pb-10 grid rounded-md w-[min(50rem,100%)] mx-auto relative ${
         lightDark ? "bg-black" : "bg-white"
@@ -263,6 +270,6 @@ export default function RevenueSimulator({ lightDark, setFileData }) {
           </button>
         </form>
       )}
-    </section>
+    </motion.section>
   );
 }

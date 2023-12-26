@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import footerImg from "../assets/footerImg.jpg";
 import { MdAlternateEmail, MdMessage } from "react-icons/md";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
@@ -58,7 +59,17 @@ export default function ContactForm({ lightDark }) {
   }
 
   return (
-    <div className="grid lg:grid-cols-2 bg-[#2e9cd7] rounded-lg overflow-hidden absolute -bottom-[30rem] md:-bottom-[25rem] lg:-bottom-[18rem] left-6 right-6 md:left-8 md:right-8">
+    <motion.div
+      initial={{ translateY: 80, opacity: 0 }}
+      whileInView={{
+        translateY: 0,
+        opacity: 1,
+        transition: { type: "easeInOut", delay: 0.3 },
+      }}
+      viewport={{ once: true, amount: 0.1 }}
+      id="simulator"
+      className="grid lg:grid-cols-2 bg-[#2e9cd7] rounded-lg overflow-hidden absolute -bottom-[30rem] md:-bottom-[25rem] lg:-bottom-[18rem] left-6 right-6 md:left-8 md:right-8"
+    >
       <img
         src={footerImg}
         alt="contact"
@@ -120,6 +131,6 @@ export default function ContactForm({ lightDark }) {
           </button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

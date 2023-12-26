@@ -10,15 +10,23 @@ export default function Home({ lightDark, setFileData }) {
   const { t, i18n } = useTranslation();
   return (
     <div className="relative ">
-      <section className="h-screen grid grid-rows-[2fr_1fr] lg:grid-rows-[unset] lg:grid-cols-2 relative gap-10">
-        <img
+      <section className="h-screen relative grid grid-rows-[2fr_1fr] lg:grid-rows-[unset] lg:grid-cols-2 gap-10 overflow-hidden">
+        <motion.img
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 5, type: "ease" }}
           src={School}
-          className={`absolute -z-10 w-full h-full object-cover grayscale ${
+          className={`absolute -z-10 w-full h-full object-cover  grayscale ${
             lightDark ? "opacity-20" : "opacity-40"
           }`}
           alt=""
         />
-        <div className="px-6 md:px-8 lg:self-center self-end grid justify-center lg:justify-start">
+        <motion.div
+          className="px-6 md:px-8 lg:self-center self-end grid justify-center lg:justify-start"
+          initial={{ translateY: "-200%", opacity: 0 }}
+          animate={{ translateY: "0", opacity: 1 }}
+          transition={{ delay: 1, type: "ease" }}
+        >
           <p
             className={`showcaseHeader text-center lg:text-left text-[clamp(90px,13vw,150px)]  tracking-tighter leading-[1em] ${
               lightDark
@@ -45,22 +53,28 @@ export default function Home({ lightDark, setFileData }) {
           >
             {t("home_page.our_offers")}
           </a>
-        </div>
-        <div className="grid lg:self-center self-start lg:gap-5 px-6">
-          <p
+        </motion.div>
+        <div className="grid lg:self-center self-start lg:gap-5 px-6 overflow-hidden">
+          <motion.p
+            initial={{ translateX: "300%", opacity: 0 }}
+            animate={{ translateX: "0", opacity: 1 }}
+            transition={{ delay: 1.5, type: "ease" }}
             className={`text-3xl md:text-5xl text-center lg:text-left lg:border-l-4 lg:py-10 px-6 ${
               lightDark ? "text-white border-white" : "text-black border-black"
             }`}
           >
             {t("home_page.level")}
-          </p>
-          <p
+          </motion.p>
+          <motion.p
+            initial={{ translateX: "-300%", opacity: 0 }}
+            animate={{ translateX: "0", opacity: 1 }}
+            transition={{ delay: 2, type: "ease" }}
             className={`text-3xl md:text-5xl text-center lg:text-right lg:border-r-4 lg:py-10 px-6 ${
               lightDark ? "text-white border-white" : "text-black border-black"
             }`}
           >
             {t("home_page.your_followers")}
-          </p>
+          </motion.p>
         </div>
       </section>
       <div
@@ -74,7 +88,14 @@ export default function Home({ lightDark, setFileData }) {
             {t("home_page.our_offers")}
           </motion.p>
           <div className="grid md:grid-cols-2 gap-10">
-            <div
+            <motion.div
+              initial={{ translateY: 80, opacity: 0 }}
+              whileInView={{
+                translateY: 0,
+                opacity: 1,
+                transition: { type: "easeInOut", delay: 0.3 },
+              }}
+              viewport={{ once: true, amount: "some" }}
               className={` rounded-lg overflow-hidden ${
                 lightDark ? "bg-black" : "bg-white"
               }`}
@@ -94,8 +115,15 @@ export default function Home({ lightDark, setFileData }) {
                   {t("home_page.online_course_des")}
                 </p>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              initial={{ translateY: 80, opacity: 0 }}
+              whileInView={{
+                translateY: 0,
+                opacity: 1,
+                transition: { type: "easeInOut", delay: 0.3 },
+              }}
+              viewport={{ once: true, amount: "some" }}
               className={` rounded-lg overflow-hidden ${
                 lightDark ? "bg-black" : "bg-white"
               }`}
@@ -115,7 +143,7 @@ export default function Home({ lightDark, setFileData }) {
                   {t("home_page.online_comm_des")}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
           <a
             href="#simulator"

@@ -101,18 +101,17 @@ export default function NavMenu({
       >
         {t("nav.simulator")}
       </a>
-      <NavLink
+      <p
         onClick={() => {
           setShowMenu(!showMenu);
           setFrench(!french);
         }}
-        to="/"
         className={`text-4xl border border-black self-center p-4 flex justify-between items-center font-medium ${
           lightDark && "dark:border-white"
         }`}
       >
         {french ? "English" : "Français"}
-      </NavLink>
+      </p>
     </motion.div>
   );
 }

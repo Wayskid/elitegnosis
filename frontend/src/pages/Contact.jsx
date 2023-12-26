@@ -1,25 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  BsInstagram,
-  BsPhone,
-  BsPhoneLandscape,
-  BsTelephone,
-} from "react-icons/bs";
-import {
-  FaInstagram,
-  FaLocationDot,
-  FaLocationPin,
-  FaPhone,
-} from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FiPhone } from "react-icons/fi";
-import {
-  MdEmail,
-  MdLocationPin,
-  MdOutlineMail,
-  MdOutlineWhatsapp,
-} from "react-icons/md";
+import { FaInstagram } from "react-icons/fa6";
+import { MdOutlineMail, MdOutlineWhatsapp } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
 
 import ContactForm from "../components/ContactForm";
@@ -32,7 +14,10 @@ export default function Contact({ lightDark }) {
     <div className="relative">
       <section className="h-screen relative grid">
         <div className={`text-center grid transition-colors `}>
-          <img
+          <motion.img
+            initial={{ scale: 1.2 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 5, type: "ease" }}
             src={Call}
             className={`absolute -z-10 w-full h-full object-cover grayscale ${
               lightDark ? "opacity-20" : "opacity-40"
@@ -40,11 +25,14 @@ export default function Contact({ lightDark }) {
             alt=""
           />
           <div className="self-center grid pt-20">
-            <p
-              className={`text-[3rem] md:text-[5rem] font-extrabold text-[#2e9cd7] w-[min(70rem,95%)] mx-auto`}
+            <motion.p
+              initial={{ translateY: "-200%", opacity: 0 }}
+              animate={{ translateY: "0", opacity: 1 }}
+              transition={{ delay: 0.8, type: "ease" }}
+              className={`text-[3rem] md:text-[4rem] font-extrabold text-[#2e9cd7] w-[min(70rem,95%)] mx-auto`}
             >
               {t("contact_page.add_value")}
-            </p>
+            </motion.p>
             <a
               href="https://calendar.app.google/ZzgEsJz4Em1LYQBs7"
               target="_blank"
