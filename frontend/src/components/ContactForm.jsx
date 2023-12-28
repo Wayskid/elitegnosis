@@ -18,12 +18,12 @@ export default function ContactForm({ lightDark }) {
 
   function sendEmail(e) {
     e.preventDefault();
-    if (Object.values(footerContact).every((val) => val.length > 0)) {
+    if (Object.values(footerContact).length === 3) {
       setLoading(true);
       emailjs
         .send(
           "service_82cheld",
-          "template_025ph7t",
+          "template_gbo5vkq",
           {
             ...footerContact,
           },
@@ -31,16 +31,13 @@ export default function ContactForm({ lightDark }) {
         )
         .then(
           (result) => {
-            setEmailSentRes(result);
+            setShowResult(true);
             setLoading(false);
             setFooterContact({
               name: "",
               email: "",
               message: "",
             });
-            setTimeout(() => {
-              setEmailSentRes();
-            }, 4000);
             console.log(result);
           },
           (error) => {

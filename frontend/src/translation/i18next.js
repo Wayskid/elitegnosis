@@ -109,12 +109,12 @@ i18next.use(initReactI18next).init({
           done: "Vous recevrez une réponse par e-mail dans quelques heures.",
         },
         about_page: {
-          vision: "Notre vision",
+          vision: "Notre Vision",
           our_vision:
-            "Donner du pouvoir aux créateurs passionnés et accroître leur influence en fournissant des solutions numériques innovantes. Nous envisageons un monde dans lequel chaque créateur de contenu peut passer en toute transparence d'influenceur à mentor, guidant son public à travers des cours de maîtrise en ligne immersifs et favorisant de véritables connexions au sein de communautés en ligne payantes exclusives.",
-          mission: "Notre mission",
+            "Permettre aux créateurs passionnés d'accroître leur influence grâce à des solutions numériques novatrices. Nous envisageons un monde où chaque créateur de contenu peut passer aisément du status de l'influenceur à celui du mentor, guidant son public à travers des cours en ligne immersifs et favorisant des connexions authentiques au sein de communautés en ligne exclusives payantes.",
+          mission: "Notre Mission",
           our_mission:
-            "Notre mission Chez Elite Gnosis, notre mission est de transformer les créateurs de contenu numérique en leaders de l'industrie. Nous nous engageons à permettre aux créateurs de monétiser leur expertise en proposant des solutions de sites Web complètes. Grâce à des cours de master en ligne personnalisés, nous donnons les moyens créateurs à transcender les frontières traditionnelles du contenu et à devenir mentors. Nos communautés en ligne payantes offrent un espace pour des échanges significatifs interactions, permettant aux créateurs de cultiver une relation dédiée et engagée public. En favorisant l'éducation, les liens et la communauté, nous nous efforçons redéfinir l’expérience du créateur et contribuer à la croissance de relations en ligne authentiques.",
+            "Chez Elite Gnosis, notre mission est de transformer les créateurs de contenu numérique en leaders de l'industrie. Nous nous engageons à permettre aux créateurs de monétiser leur expertise en offrant des solutions de site web complètes. À travers des cours en ligne personnalisés, nous permettons aux créateurs de transcender les limites traditionnelles du contenu et à devenir des mentors. Nos communautés en ligne payantes offrent un espace pour des interactions significatives, permettant aux créateurs de cultiver un public dévoué et engagé. En favorisant l'éducation, la connexion et la communauté, nous redéfinissons l'expérience du créateur et contribuons à la croissance d'authentiques relations en ligne.",
         },
       },
     },
