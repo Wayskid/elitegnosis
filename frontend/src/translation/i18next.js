@@ -64,7 +64,7 @@ i18next.use(initReactI18next).init({
     fr: {
       translation: {
         nav: {
-          home: "MAISON",
+          home: "ACCUEIL",
           about: "À PROPOS",
           contact: "CONTACT",
           simulator: "SIMULATEUR",
