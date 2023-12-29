@@ -70,7 +70,7 @@ i18next.use(initReactI18next).init({
           simulator: "SIMULATEUR",
         },
         home_page: {
-          level: "Level Up!",
+          level: "Level Up!", 
           your_followers: "Tes Abonnés Le Méritent!",
           our_offers: "Nos offres",
           online_course: "Cours en ligne",
