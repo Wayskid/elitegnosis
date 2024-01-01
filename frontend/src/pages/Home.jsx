@@ -105,7 +105,7 @@ export default function Home({ lightDark, setFileData }) {
               </p>
               <div className="px-5 md:px-16 py-20 text-center">
                 <p
-                  className={`text-5xl mb-5 ${
+                  className={`text-3xl md:text-5xl mb-5 ${
                     lightDark ? "text-white" : "text-black"
                   }`}
                 >
@@ -133,7 +133,7 @@ export default function Home({ lightDark, setFileData }) {
               </p>
               <div className="px-5 md:px-16 py-20 text-center">
                 <p
-                  className={`text-5xl mb-5 ${
+                  className={`text-3xl md:text-5xl mb-5 ${
                     lightDark ? "text-white" : "text-black"
                   }`}
                 >
