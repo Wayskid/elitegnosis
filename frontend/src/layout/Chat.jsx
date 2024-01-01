@@ -28,9 +28,11 @@ export default function Chat({ lightDark, showChat }) {
       emailjs
         .send(
           "service_82cheld",
-          "template_025ph7t",
+          "template_gbo5vkq",
           {
-            ...messageVal,
+            name: messageVal.name,
+            email: messageVal.email,
+            message: messageVal.subject + "--" + messageVal.message,
           },
           "cozjcJvRVN6Q6PN29"
         )
@@ -41,6 +43,7 @@ export default function Chat({ lightDark, showChat }) {
             setMessageVal({
               name: "",
               email: "",
+              subject: "",
               message: "",
             });
             console.log(result);
