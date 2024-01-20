@@ -25,6 +25,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://elitegnosis.netlify.app",
+      "https://elitegnosis.com/",
     ],
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
     optionSuccessStatus: 204,
